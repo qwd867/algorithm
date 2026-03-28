@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "../SortHelper/SortHelper.h"
 
 void SelectSort(std::vector<int> &arr)
 {
@@ -18,20 +19,13 @@ void SelectSort(std::vector<int> &arr)
     }
 }
 
-void PrintArr(std::vector<int> &arr)
-{
-    for (const auto &num : arr)
-    {
-        std::cout << num << " ";
-    }
-    std::cout << std::endl;
-}
-
 int main()
 {
+    SortHelper sortHelper;
+
     std::vector<int> arr = {8, 4, 65, 7, 8, 3, 6, 6, 87, 3, 7, 23, 6, 3};
-    PrintArr(arr);
+    sortHelper.PrintArr(arr);
     SelectSort(arr);
-    PrintArr(arr);
+    sortHelper.PrintArr(arr);
     return 0;
 }
