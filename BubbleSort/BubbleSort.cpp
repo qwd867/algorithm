@@ -5,12 +5,19 @@ void BubbleSort(std::vector<int> &arr)
 {
     for (int i = 0; i < arr.size(); ++i)
     {
+        int swapped = false; // 判断是否交换过顺序
         for (int j = 1; j < arr.size() - i; ++j)
         {
             if (arr[j - 1] > arr[j])
             {
                 std::swap(arr[j - 1], arr[j]);
+                swapped = true;
             }
+        }
+        if (!swapped)
+        {
+            // 如果没有交换过顺序，说明排序已经完成，可以提前退出了
+            break;
         }
     }
 }
